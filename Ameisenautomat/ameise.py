@@ -63,7 +63,7 @@ class gitter:
 		for i in range(len(self.lattice[0])):
 			for j in range(len(self.lattice)):
 				if lattice[i][j]:
-					self.window.fill((0,0,255), pygame.Rect((i*self.boxwidth, (j+1)*self.boxheight, self.boxwidth, self.boxheight)))
+					self.window.fill((0,0,255), pygame.Rect((i*self.boxwidth, j*self.boxheight, self.boxwidth, self.boxheight)))
 		for i in range(1,len(self.lattice)):
 			pygame.draw.line(self.window, (200,200,200), (0, i*self.boxheight), (self.size[0], i*self.boxheight))
 		for i in range(1,len(self.lattice[0])):
@@ -86,6 +86,6 @@ while 1:
 		ant.move()
 		git.draw()
 		pygame.display.update()
-		fps.tick(120)
+		fps.tick(240)
 
 pygame.quit()
